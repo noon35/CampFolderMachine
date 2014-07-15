@@ -12,6 +12,12 @@ namespace CampFolderMachine
     {
         private List<DirectoryInfo> rootFolders;
 
+        public Repository()
+        {
+            rootFolders = new List<DirectoryInfo>();
+        }
+
+
         public List<DirectoryInfo> RootFolders
         {
             get { return rootFolders; }
