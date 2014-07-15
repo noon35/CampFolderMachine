@@ -11,6 +11,9 @@ namespace CampFolderMachine
         static void Main(string[] args)
         {
             //test
+            Repository R = new Repository();
+            R.AddRootFolder(new System.IO.DirectoryInfo("G:\\camps"));
+            Console.WriteLine(R.RootFolders[0].FullName.ToString());
         }
     }
 }
