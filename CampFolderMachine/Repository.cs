@@ -23,9 +23,9 @@ namespace CampFolderMachine
             get { return rootFolders; }
         }
 
-        public void AddRootFolder(DirectoryInfo newFolder)
+        public void AddRootFolder(string folderPath)
         {
-            rootFolders.Add(newFolder);
+            rootFolders.Add(new DirectoryInfo(folderPath));
         }
     }
 }

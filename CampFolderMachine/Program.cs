@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace CampFolderMachine
 {
@@ -10,10 +11,21 @@ namespace CampFolderMachine
     {
         static void Main(string[] args)
         {
-            //test
-            Repository R = new Repository();
-            R.AddRootFolder(new System.IO.DirectoryInfo("G:\\camps"));
-            Console.WriteLine(R.RootFolders[0].FullName.ToString());
+            
+            Repository r = new Repository();
+            r.AddRootFolder("G:\\camps");
+            r.AddRootFolder("G:\\camps\\ada");
+            r.AddRootFolder("G:\\Camps\\YMCA Metuchen-Edison - Edison Branch");
+            r.AddRootFolder("G:\\Camps\\YMCA of Greater Hartford");
+            r.AddRootFolder("G:\\Camps\\Lake Geneva Youth Camp & Conference Center");
+
+            foreach (System.IO.DirectoryInfo x in r.RootFolders)
+            {
+                Console.WriteLine(x.FullName);
+                Console.WriteLine(x.GetDirectories().Count());
+            }
+            Console.ReadLine();
+            
         }
     }
 }
